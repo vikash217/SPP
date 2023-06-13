@@ -6,7 +6,7 @@ import base64
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Set the base URL of the FastAPI server
-BASE_URL = "http://localhost:8000/LSTM_Predict"
+BASE_URL = "http://localhost:8000"
 
 # Load the logo image
 logo_image = "Logo.png"
