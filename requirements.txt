@@ -1,6 +1,6 @@
 bs4                         
 fastapi                      
-keras                       
+keras                        2.12.0
 matplotlib                  
 numpy                        
 pandas                      
@@ -13,5 +13,5 @@ scipy
 seaborn                      
 setuptools                   
 streamlit                                      
-tensorflow                  
+tensorflow                   2.12.0
 uvicorn                      
