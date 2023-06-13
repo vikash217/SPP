@@ -42,7 +42,7 @@ async def predict(stock_request: StockRequest):
     scaled_data = scaler.fit_transform(dataset)
 
     # Define the sequence length and split the data into training and testing sets
-    seq_len = 60
+    seq_len = 100
     train_size = int(len(scaled_data) * 0.9)
     train_data = scaled_data[:train_size]
     test_data = scaled_data[train_size - seq_len:]
@@ -66,7 +66,7 @@ async def predict(stock_request: StockRequest):
 
     # Compile and train the model
     model.compile(optimizer='adam', loss='mean_squared_error')
-    model.fit(x_train, y_train, batch_size=32, epochs=50)
+    model.fit(x_train, y_train, batch_size=60, epochs=5)
 
     # Generate future predictions excluding weekends
     future_dates = pd.date_range(start=start_date, end=end_date)
