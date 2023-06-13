@@ -12,7 +12,6 @@ scikit-learn
 scipy                        
 seaborn                      
 setuptools                   
-sklearn                      
 streamlit                                      
 tensorflow                  
 uvicorn                      
