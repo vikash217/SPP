@@ -8,14 +8,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 class StockRequest(BaseModel):
     stock_name: str
     start_date: str
