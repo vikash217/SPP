@@ -20,7 +20,7 @@ STOCK_FILE_PATHS = {
    "Tcs": "TCS.csv",
 }
 
-@app.post("/LSTM_Predict")
+@app.post("/https://webapp-dyz6.onrender.com/")
 async def predict(stock_request: StockRequest):
     stock_name = stock_request.stock_name
     start_date = pd.to_datetime(stock_request.start_date)
