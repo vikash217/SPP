@@ -1,7 +1,7 @@
 bs4
-protobuf==3.20
+protobuf
 fastapi                      
-keras==2.12.0
+keras
 matplotlib                  
 numpy                        
 pandas                      
@@ -14,5 +14,5 @@ scipy
 seaborn                      
 setuptools                   
 streamlit                                      
-tensorflow==2.12.0
+tensorflow
 uvicorn                      
