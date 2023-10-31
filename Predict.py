@@ -54,7 +54,6 @@ async def predict(stock_request: StockRequest):
 
     x_train, y_train = np.array(x_train), np.array(y_train)
 
-    # Define the LSTM model architecture
     model = Sequential()
     model.add(LSTM(128, return_sequences=True, input_shape=(x_train.shape[1], x_train.shape[2])))
     model.add(Dropout(0.2))
@@ -64,11 +63,9 @@ async def predict(stock_request: StockRequest):
     model.add(Dropout(0.2))
     model.add(Dense(4, activation='relu'))
 
-    # Compile and train the model
     model.compile(optimizer='adam', loss='mean_squared_error')
     model.fit(x_train, y_train, batch_size=32, epochs=5)
 
-    # Generate future predictions excluding weekends
     future_dates = pd.date_range(start=start_date, end=end_date)
     future_dates = future_dates[future_dates.weekday < 5]  # Exclude Saturdays and Sundays
 
@@ -76,7 +73,6 @@ async def predict(stock_request: StockRequest):
     predictions = []
 
     for date in future_dates:
-        # Skip if the date falls on a weekend
         if date.weekday() >= 5:
             continue
 
@@ -85,10 +81,8 @@ async def predict(stock_request: StockRequest):
         predictions.append(prediction[0])
         x_future = np.concatenate((x_future[1:], prediction))
 
-    # Rescale the predictions to the original scale
     predictions = scaler.inverse_transform(predictions)
 
-    # Prepare the response data
     response = {
         "future_prediction": predictions.tolist(),
         "future_dates": future_dates.strftime("%Y-%m-%d").tolist(),
