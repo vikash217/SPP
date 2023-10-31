@@ -22,14 +22,11 @@ end_date = st.date_input("Select end date")
 
 if start_date < end_date:
     if st.button("Predict"):
-        # Prepare the request payload
         payload = {"stock_name": stock_name, "start_date": str(start_date), "end_date": str(end_date)}
 
-        # Send the request to the server
         response = requests.post(f"{BASE_URL}/LSTM_Predict", json=payload)
 
         if response.status_code == 200:
-            # Display predicted prices
             data = response.json()
             if "future_prediction" in data:
                 predict_prices = data["future_prediction"]
