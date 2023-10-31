@@ -5,23 +5,18 @@ import matplotlib.pyplot as plt
 import base64 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# Set the base URL of the FastAPI server
 BASE_URL = "https://venturesathi-prediction.onrender.com"
 
-# Load the logo image
 logo_image = "Logo.png"
 
-# Create the layout
 col1, col2 = st.columns([1, 5])
 with col1:
     st.image(logo_image, width=100)
 with col2:
     st.title("Stock Price Prediction")
 
-# Stock selection
 stock_name = st.selectbox("Select a stock", ("Reliance", "Zomato", "Hdfc", "Tcs"))
 
-# Date range selection
 start_date = st.date_input("Select start date")
 end_date = st.date_input("Select end date")
 
@@ -57,7 +52,6 @@ if start_date < end_date:
                 href = f'<a href="data:file/csv;base64,{b64}" download="predicted_prices.csv">Download CSV</a>'
                 st.markdown(href, unsafe_allow_html=True)
 
-                # Create line plot chart
                 plt.figure(figsize=(10, 6))
                 for i, column_name in enumerate(column_names):
                     plt.plot(future_dates, [price[i] for price in predict_prices], label=column_name)
@@ -68,7 +62,6 @@ if start_date < end_date:
                 plt.legend()
                 st.pyplot()
 
-                # Create scatter plot chart
                 plt.figure(figsize=(10, 6))
                 for i, column_name in enumerate(column_names):
                     plt.scatter(future_dates, [price[i] for price in predict_prices], label=column_name)
