@@ -42,7 +42,6 @@ if start_date < end_date:
                     row = [date] + prices
                     table_data.append(row)
 
-                # Create a DataFrame and remove the column index label
                 df = pd.DataFrame(table_data[1:], columns=table_data[0]).rename_axis(None, axis=1)
 
                 st.table(df)
