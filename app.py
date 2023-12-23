@@ -7,7 +7,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 BASE_URL = "http://localhost:8000"
 
-logo_image = "Logo.png"
+logo_image = ""
 
 col1, col2 = st.columns([1, 5])
 with col1:
@@ -35,7 +35,7 @@ if start_date < end_date:
                 column_names = data["column_names"]
 
                 st.write(f"Predicted prices for {stock_name} between {start_date} and {end_date}:")
-                table_data = [["Date"] + column_names]  # Include "Date" as the first element in the first row
+                table_data = [["Date"] + column_names] 
                 for date, prices in zip(future_dates, predict_prices):
                     row = [date] + prices
                     table_data.append(row)
