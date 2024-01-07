@@ -4,5 +4,6 @@ pandas
 pydantic                   
 requests                                       
 setuptools                   
-streamlit                                      
+streamlit     
+keras
 uvicorn                      
