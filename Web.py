@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import base64 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-BASE_URL = "/LSTM_Predict"
+BASE_URL = "https://spp-oaaw.onrender.com"
 
 st.title("Stock Price Prediction")
 
