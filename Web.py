@@ -8,7 +8,7 @@ BASE_URL = "https://model-591m.onrender.com"
 
 st.title("Stock Price Prediction")
 
-stock_name = st.selectbox("Select a stock", ("Zomato"))
+stock_name = st.selectbox("Select a stock", ("Reliance", "Zomato", "HDFC", "TCS"))
 
 start_date = st.date_input("Select start date")
 end_date = st.date_input("Select end date")
