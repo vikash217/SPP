@@ -9,4 +9,3 @@ keras
 uvicorn                      
 scikit-learn
 tensorflow
-base64
