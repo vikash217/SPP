@@ -7,5 +7,5 @@ setuptools
 streamlit     
 keras
 uvicorn                      
-sklearn
+scikit-learn
 tensorflow
