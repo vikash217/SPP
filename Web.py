@@ -9,7 +9,7 @@ BASE_URL = "https://spp-oaaw.onrender.com"
 
 st.title("Stock Price Prediction")
 
-stock_name = st.selectbox("Select a stock", ("Reliance", "Zomato", "HDFC", "TCS"))
+stock_name = st.selectbox("Select a stock", ("Zomato"))
 
 start_date = st.date_input("Select start date")
 end_date = st.date_input("Select end date")
