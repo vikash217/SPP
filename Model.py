@@ -14,7 +14,7 @@ class StockRequest(BaseModel):
 
 STOCK_FILE_PATHS = {
 #    "Reliance": "RELIANCE.csv",
-   "Zomato": "ZOMATO.csv",
+   "Zomato": "Zomato.csv",
 #    "Hdfc": "HDFC.csv",
 #    "Tcs": "TCS.csv",
 }
