@@ -52,7 +52,7 @@ async def predict(stock_request: StockRequest):
 
     x_train, y_train = np.array(x_train), np.array(y_train)
 
-    model = load_model('model.h5')
+    model = load_model('Model.h5')
 
     future_dates = pd.date_range(start=start_date, end=end_date)
     future_dates = future_dates[future_dates.weekday < 5]  
