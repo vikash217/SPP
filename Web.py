@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import pandas as pd
-import matplotlib.pyplot as plt
 import base64 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
