@@ -5,10 +5,7 @@ import matplotlib.pyplot as plt
 import base64 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-BASE_URL = "https://venturesathi-prediction.onrender.com"
-
-logo_image = "Logo.png"
-
+BASE_URL = ""
 col1, col2 = st.columns([1, 5])
 with col1:
     st.image(logo_image, width=100)
